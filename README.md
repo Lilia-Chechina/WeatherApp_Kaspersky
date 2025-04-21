@@ -22,13 +22,13 @@
 ## 🎥 Демонстрация
 
 ### Ввод города
-![Ввод города](Assets/Input_city.gif)
+<img src="Assets/Input_city.gif" width="300" />
 
 ### Проверка на повтор
-![Не добавляет дубликаты](Assets/Not_dublicates.gif)
+<img src="Assets/Not_dublicates.gif" width="300" />
 
 ### Город не найден
-![Город не найден](Assets/City_is_not_found.gif)
+<img src="Assets/City_is_not_found.gif" width="300" />
 
 ## 👨‍💻 Автор
 
