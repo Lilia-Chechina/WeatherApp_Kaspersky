@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tGY-Fb-nuK">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="9Nf-Hw-uJv">
+            <objects>
+                <navigationController id="tGY-Fb-nuK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="mKF-H7-7U9">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="RnJ-Cz-hgb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BZe-F2-ayF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1390" y="-17"/>
+        </scene>
+        <!--Погода-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Погода" id="BYZ-38-t0r" customClass="MainViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Добавить новый город" translatesAutoresizingMaskIntoConstraints="NO" id="UqV-TJ-rkd">
+                                <rect key="frame" x="0.0" y="155" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="oyk-4F-0tK"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="96" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MMx-sQ-jyS">
+                                <rect key="frame" x="0.0" y="211" width="393" height="607"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="50g-gQ-ljI">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="50g-gQ-ljI" id="PBF-VC-nKS">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="d06-iy-FqG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MMx-sQ-jyS" firstAttribute="top" secondItem="UqV-TJ-rkd" secondAttribute="bottom" id="FF6-g4-s7N"/>
+                            <constraint firstItem="MMx-sQ-jyS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nPX-6R-bME"/>
+                            <constraint firstItem="UqV-TJ-rkd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oiX-mE-iAb"/>
+                            <constraint firstItem="UqV-TJ-rkd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pUz-Z4-Ay1"/>
+                            <constraint firstItem="UqV-TJ-rkd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sfX-u7-AFd"/>
+                            <constraint firstItem="MMx-sQ-jyS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tQb-Sz-fei"/>
+                            <constraint firstItem="MMx-sQ-jyS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wWn-H0-nth"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Погода" id="kzN-Hh-lEc"/>
+                    <connections>
+                        <outlet property="searchBar" destination="UqV-TJ-rkd" id="2vp-mE-YNg"/>
+                        <outlet property="tableView" destination="MMx-sQ-jyS" id="HXX-ld-Bfa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125.95419847328243" y="-18.30985915492958"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
